@@ -1,4 +1,4 @@
-const VERSION = "V0";
+const VERSION = "V1";
 const NUMS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const state = {
@@ -27,14 +27,18 @@ const state = {
 const app = document.getElementById("app");
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").catch(function () {});
+  navigator.serviceWorker.getRegistrations().then(function (rs) {
+    rs.forEach(function (r) { r.unregister(); });
+  }).then(function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
 }
 
 function esc(s) {
   return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/"/g, "&quot;");
+    .replace(/&/g, "&")
+    .replace(/</g, "<")
+    .replace(/"/g, """);
 }
 
 function render() {
