@@ -45,7 +45,7 @@ home = function () {
     y.replaceWith(yi);
   }
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V8';
+  if (v) v.textContent = 'V9';
 };
 pesHtml = function (p) {
   var open = state.pesOpen[p] ? ' open' : '';
@@ -99,6 +99,6 @@ var _resultView = resultView;
 resultView = function () {
   _resultView();
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V8';
+  if (v) v.textContent = 'V9';
 };
 if (state.screen === 'home') home();
