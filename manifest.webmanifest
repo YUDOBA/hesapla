@@ -1,0 +1,9 @@
+{
+  "name": "HESAPLA",
+  "short_name": "HESAPLA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f3efe4",
+  "theme_color": "#1b365d",
+  "orientation": "portrait"
+}
