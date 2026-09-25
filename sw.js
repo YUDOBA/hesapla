@@ -1,4 +1,4 @@
-const CACHE = 'hesapla-v5c';
+const CACHE = 'hesapla-v6';
 const CORE = [
   './index.html',
   './',
