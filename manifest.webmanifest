@@ -2,7 +2,7 @@
   "name": "HESAPLA",
   "short_name": "HESAPLA",
   "description": "Aynı telefondan iki kişilik hesap oyunu",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
