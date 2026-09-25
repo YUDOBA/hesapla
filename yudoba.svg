@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#fff"/>
+  <path d="M96 0h160v256H0V96C0 43 43 0 96 0z" fill="#e53935"/>
+  <path d="M256 0h160c53 0 96 43 96 96v160H256V0z" fill="#fdd835"/>
+  <path d="M0 256h256v256H96c-53 0-96-43-96-96V256z" fill="#43a047"/>
+  <path d="M256 256h256v160c0 53-43 96-96 96H256V256z" fill="#1e88e5"/>
+  <rect x="78" y="78" width="356" height="356" rx="48" fill="#fff"/>
+  <text x="256" y="248" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="800" fill="#111">YUDO</text>
+  <text x="256" y="348" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="800" fill="#111">BA</text>
+</svg>

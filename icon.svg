@@ -1,5 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#f3efe4"/>
-  <circle cx="256" cy="256" r="210" fill="none" stroke="#1b365d" stroke-width="18"/>
-  <text x="256" y="318" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="240" font-weight="700" fill="#1b365d">H</text>
+  <rect width="512" height="512" rx="96" fill="#f6efe3"/>
+  <text x="256" y="92" text-anchor="middle" font-family="Century Gothic, Futura, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="8" fill="#1a2744">HESAPLA</text>
+  <g transform="translate(256 286)">
+    <circle r="132" fill="#f6efe3" stroke="#1a2744" stroke-width="10"/>
+    <path d="M-122 0 A122 122 0 0 1 122 0" fill="none" stroke="#c45a4e" stroke-width="18"/>
+    <path d="M122 0 A122 122 0 0 1 -122 0" fill="none" stroke="#3a6aa8" stroke-width="18"/>
+    <text y="22" text-anchor="middle" font-family="Century Gothic, Futura, Arial, sans-serif" font-size="92" font-weight="700" fill="#1a2744">12</text>
+    <g transform="translate(-78 -6)">
+      <rect x="-16" y="-16" width="32" height="32" rx="4" fill="#f4eee3" stroke="#1a2744" stroke-width="2"/>
+      <circle cx="-7" cy="-7" r="2.2" fill="#1a2744"/>
+      <circle cx="7" cy="-7" r="2.2" fill="#1a2744"/>
+      <circle cx="-7" cy="7" r="2.2" fill="#1a2744"/>
+      <circle cx="7" cy="7" r="2.2" fill="#1a2744"/>
+      <circle cx="0" cy="0" r="2.2" fill="#1a2744"/>
+    </g>
+    <g transform="translate(78 -6)">
+      <rect x="-16" y="-16" width="32" height="32" rx="4" fill="#f4eee3" stroke="#1a2744" stroke-width="2"/>
+      <circle cx="-7" cy="-7" r="2.2" fill="#1a2744"/>
+      <circle cx="7" cy="7" r="2.2" fill="#1a2744"/>
+    </g>
+  </g>
 </svg>
