@@ -28,8 +28,24 @@ home = function () {
     b.onclick = function () { openRules('home', false); };
     go.insertAdjacentElement('afterend', b);
   }
+  var h1 = document.querySelector('.home h1');
+  if (h1 && !document.querySelector('.brand')) {
+    var img = document.createElement('img');
+    img.className = 'brand';
+    img.src = 'icon.svg';
+    img.alt = 'HESAPLA';
+    h1.replaceWith(img);
+  }
+  var y = document.querySelector('.yudoba');
+  if (y) {
+    var yi = document.createElement('img');
+    yi.className = 'yudoba-img';
+    yi.src = 'yudoba.svg';
+    yi.alt = 'YUDOBA';
+    y.replaceWith(yi);
+  }
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V7';
+  if (v) v.textContent = 'V8';
 };
 pesHtml = function (p) {
   var open = state.pesOpen[p] ? ' open' : '';
@@ -79,4 +95,10 @@ function rulesView() {
     '<div class="rules-scroll"><h1>KURALLAR</h1>' + body + '</div></div>';
   document.getElementById('rulesback').onclick = closeRules;
 }
+var _resultView = resultView;
+resultView = function () {
+  _resultView();
+  var v = document.querySelector('.ver');
+  if (v) v.textContent = 'V8';
+};
 if (state.screen === 'home') home();
