@@ -1,34 +1,26 @@
-const CACHE = 'hesapla-v5';
+const CACHE = 'hesapla-v5b';
 const CORE = [
   './index.html',
   './',
   'stylev2.css',
   'gamev5.js',
   'v4d.js',
+  'v4f.js',
   'manifest.webmanifest',
   'icon.svg'
 ];
-
 self.addEventListener('install', function (e) {
-  e.waitUntil(
-    caches.open(CACHE).then(function (c) {
-      return Promise.all(CORE.map(function (u) {
-        return c.add(u).catch(function () {});
-      }));
-    })
-  );
+  e.waitUntil(caches.open(CACHE).then(function (c) {
+    return Promise.all(CORE.map(function (u) { return c.add(u).catch(function () {}); }));
+  }));
   self.skipWaiting();
 });
-
 self.addEventListener('activate', function (e) {
-  e.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(keys.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
-    })
-  );
+  e.waitUntil(caches.keys().then(function (keys) {
+    return Promise.all(keys.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
+  }));
   self.clients.claim();
 });
-
 self.addEventListener('fetch', function (e) {
   e.respondWith(
     fetch(e.request).then(function (res) {
@@ -36,9 +28,7 @@ self.addEventListener('fetch', function (e) {
       caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
       return res;
     }).catch(function () {
-      return caches.match(e.request).then(function (r) {
-        return r || caches.match('./index.html');
-      });
+      return caches.match(e.request).then(function (r) { return r || caches.match('./index.html'); });
     })
   );
 });
