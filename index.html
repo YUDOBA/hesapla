@@ -12,6 +12,11 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <link rel="stylesheet" href="stylev2.css"/>
 <style>
+html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
+  -webkit-user-select:none!important;user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+input,textarea,select{-webkit-user-select:text!important;user-select:text!important;}
 .home.splash,.home{
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%,rgba(200,60,55,.35),transparent 55%),
@@ -27,10 +32,17 @@
 .half.bot.on{background:linear-gradient(#cfe8ff,#2f8cff)!important;}
 .half.top{background:linear-gradient(#d4a8a5,#b87874)!important;}
 .half.top.on{background:linear-gradient(#ffd2cc,#ff5a4e)!important;}
-.actions .zar{flex:2.4;}
-.actions .pas{flex:.7;position:relative;overflow:hidden;}
+.actions .zar,.actions .pas{flex:1;}
+.actions .pas{position:relative;overflow:hidden;}
 .pas .fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform:scaleX(0);transform-origin:left center;background:rgba(26,39,68,.45);pointer-events:none;z-index:0;}
 .pas.holding .fill{transform:scaleX(1);transition:transform 1s linear;}
+.turn-dot{
+  position:absolute;left:50%;transform:translateX(-50%);
+  top:34px;width:calc(min(100vw,420px)/6*0.75);height:calc(min(100vw,420px)/6*0.75);
+  border-radius:50%;pointer-events:none;z-index:6;
+  background:radial-gradient(circle at 32% 28%,#d8ffb8 0%,#3dcc44 52%,#157a22 100%);
+  box-shadow:inset 2px 3px 5px rgba(255,255,255,.6),inset -3px -4px 6px rgba(0,40,0,.35),0 3px 7px rgba(0,30,0,.28);
+}
 .pes-rail{position:absolute;left:0;top:18%;bottom:26%;width:80px;z-index:9;}
 .pes-line{position:absolute;left:0;top:0;bottom:0;width:12px;background:currentColor;opacity:.7;border-radius:0 4px 4px 0;}
 .half.bot .pes-line{color:#1e4f8a;}
@@ -53,6 +65,7 @@
 <div id="app"></div>
 <script src="gamev5.js"></script>
 <script src="v4d.js"></script>
+<script src="v4f.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js');
