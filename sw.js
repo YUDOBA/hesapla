@@ -1,4 +1,4 @@
-const CACHE = 'hesapla-v6';
+const CACHE = 'hesapla-v7';
 const CORE = [
   './index.html',
   './',
@@ -6,6 +6,7 @@ const CORE = [
   'gamev5.js',
   'v4d.js',
   'v4f.js',
+  'rulesv.js',
   'manifest.webmanifest',
   'icon.svg'
 ];
