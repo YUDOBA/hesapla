@@ -2,29 +2,26 @@ name: icons
 on:
   push:
     paths:
-      - 'apple-touch-icon.b64'
+      - 'make_icon.py'
       - '.github/workflows/icons.yml'
+  workflow_dispatch:
 jobs:
-  decode:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: decode pngs
+      - name: setup
         run: |
-          python3 - <<'PY'
-          import base64, pathlib
-          raw = pathlib.Path('apple-touch-icon.b64').read_text().strip()
-          data = base64.b64decode(raw)
-          pathlib.Path('apple-touch-icon.png').write_bytes(data)
-          pathlib.Path('icon-192.png').write_bytes(data)
-          pathlib.Path('icon-512.png').write_bytes(data)
-          PY
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq python3-pil fonts-dejavu-core
+      - name: draw
+        run: python3 make_icon.py
       - name: commit pngs
         run: |
           git config user.name github-actions
           git config user.email github-actions@users.noreply.github.com
           git add apple-touch-icon.png icon-192.png icon-512.png
-          git diff --staged --quiet || git commit -m "Add PNG home icons"
+          git diff --staged --quiet || git commit -m "Rebuild PNG home icons"
           git push
