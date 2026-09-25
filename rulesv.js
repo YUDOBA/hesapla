@@ -32,7 +32,7 @@ home = function () {
   if (h1 && !document.querySelector('.brand')) {
     var img = document.createElement('img');
     img.className = 'brand';
-    img.src = 'icon.svg';
+    img.src = 'icon.svg?v=10';
     img.alt = 'HESAPLA';
     h1.replaceWith(img);
   }
@@ -40,12 +40,12 @@ home = function () {
   if (y) {
     var yi = document.createElement('img');
     yi.className = 'yudoba-img';
-    yi.src = 'yudoba.svg';
+    yi.src = 'yudoba.svg?v=10';
     yi.alt = 'YUDOBA';
     y.replaceWith(yi);
   }
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V9';
+  if (v) v.textContent = 'V10';
 };
 pesHtml = function (p) {
   var open = state.pesOpen[p] ? ' open' : '';
@@ -99,6 +99,6 @@ var _resultView = resultView;
 resultView = function () {
   _resultView();
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V9';
+  if (v) v.textContent = 'V10';
 };
 if (state.screen === 'home') home();
