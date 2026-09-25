@@ -9,7 +9,7 @@
 <title>HESAPLA</title>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" href="icon.svg" type="image/svg+xml"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="apple-touch-icon" href="icon.svg"/>
 <link rel="stylesheet" href="stylev2.css"/>
 <style>
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -19,12 +19,14 @@ html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
 input,textarea,select{-webkit-user-select:text!important;user-select:text!important;}
 .home.splash,.home{
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%,rgba(200,60,55,.35),transparent 55%),
-    radial-gradient(ellipse 80% 50% at 50% 110%,rgba(40,90,170,.32),transparent 55%),
-    linear-gradient(#f6efe3,#efe6d6);
+    radial-gradient(ellipse 90% 48% at 50% -8%,rgba(214,64,56,.55),transparent 58%),
+    radial-gradient(ellipse 90% 48% at 50% 108%,rgba(28,86,190,.5),transparent 58%),
+    linear-gradient(#f4e4c8,#ead6b0);
 }
-.home h1{color:#15233f;text-shadow:0 1px 0 #fff;}
-.rules-home{margin-top:12px;max-width:320px;width:100%;padding:12px;font:inherit;letter-spacing:.14em;border:0;border-radius:10px;background:#ddd4c4;color:#1a2744;}
+.home .brand{width:168px;height:168px;display:block;margin:4px auto 10px;border-radius:32px;box-shadow:0 6px 0 #1a2744,0 10px 16px rgba(0,0,0,.18);}
+.home .yudoba-img{position:absolute;right:14px;bottom:calc(10px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:10px;}
+.home .yudoba{display:none;}
+.rules-home{margin-top:12px;max-width:320px;width:100%;padding:12px;font:inherit;letter-spacing:.14em;border:0;border-radius:10px;background:#c44a4a;color:#fffaf0;}
 .stats.last{border-bottom:2px solid currentColor;padding-bottom:1px;}
 .half.bot .stats.last{color:#1e4f8a;}
 .half.top .stats.last{color:#9b2b2b;}
@@ -61,20 +63,32 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .pes-ask button{margin:0 4px;padding:8px 14px;font:inherit;border:0;border-radius:8px;}
 .pes-ok{background:#1a2744;color:#f7f1e6;}
 .pes-no{background:#ddd4c4;}
-.result{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:#f3efe4;}
+.result{
+  height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;
+  background:
+    radial-gradient(ellipse 90% 46% at 50% -10%,rgba(214,64,56,.5),transparent 56%),
+    radial-gradient(ellipse 90% 46% at 50% 110%,rgba(28,86,190,.48),transparent 56%),
+    linear-gradient(#f4e4c8,#ead6b0);
+}
 .result h1{letter-spacing:.18em;margin:0 0 8px;}
 .result-sub{color:#4a5872;margin:0 0 22px;text-align:center;}
 .result-row{width:min(320px,90%);display:flex;justify-content:space-between;gap:10px;padding:12px 14px;margin:6px 0;background:#f7f1e6;border-radius:10px;box-shadow:0 3px 0 #1a2744;}
 .result .start{margin-top:26px;max-width:320px;width:100%;}
-.rules{height:100%;height:100dvh;background:#f3efe4;position:relative;overflow:hidden;}
+.rules{
+  height:100%;height:100dvh;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 90% 46% at 50% -10%,rgba(214,64,56,.5),transparent 56%),
+    radial-gradient(ellipse 90% 46% at 50% 110%,rgba(28,86,190,.48),transparent 56%),
+    linear-gradient(#f4e4c8,#ead6b0);
+}
 .rules.flip{transform:rotate(180deg);}
 .rules-back{position:absolute;top:calc(10px + env(safe-area-inset-top));right:12px;z-index:5;padding:8px 14px;border:0;border-radius:8px;font:inherit;background:#1a2744;color:#f7f1e6;}
 .rules-scroll{height:100%;overflow:auto;padding:52px 18px 28px;}
 .rules-scroll h1{margin:0 0 14px;letter-spacing:.16em;font-size:22px;}
-.rules-scroll article{background:#f7f1e6;border-radius:10px;padding:10px 12px;margin:0 0 10px;box-shadow:0 2px 0 #1a2744;}
+.rules-scroll article{background:#fff6e6;border-radius:10px;padding:10px 12px;margin:0 0 10px;box-shadow:0 2px 0 #1a2744;}
 .rules-scroll h3{margin:0 0 6px;font-size:14px;}
 .rules-scroll p{margin:0 0 6px;font-size:13px;line-height:1.35;}
-.rules-scroll .warn{color:#7a2a2a;font-size:12px;}
+.rules-scroll .warn{color:#9b2b2b;font-size:12px;}
 </style>
 </head>
 <body>
