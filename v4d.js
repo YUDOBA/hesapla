@@ -17,7 +17,7 @@ home = function () {
   var h = document.querySelector('.home');
   if (h) h.classList.add('splash');
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V5';
+  if (v) v.textContent = 'V6';
 };
 function render() {
   if (state.screen === 'home') home();
@@ -174,7 +174,7 @@ function resultView() {
   app.innerHTML = '<div class="result"><h1>SONUC</h1><p class="result-sub">' + esc(sub) + '</p>' +
     '<div class="result-row"><b>' + esc(state.nick[0]) + '</b><span>Tur ' + state.wins[0] + '</span><span>Ceza ' + state.penalty[0] + '</span></div>' +
     '<div class="result-row"><b>' + esc(state.nick[1]) + '</b><span>Tur ' + state.wins[1] + '</span><span>Ceza ' + state.penalty[1] + '</span></div>' +
-    '<button class="start" id="resgo">Yeni oyun</button><div class="ver">V5</div></div>';
+    '<button class="start" id="resgo">Yeni oyun</button><div class="ver">V6</div></div>';
   document.getElementById('resgo').onclick = function () { state.result = null; state.screen = 'home'; render(); };
 }
 render();
