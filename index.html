@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"/>
-<meta name="theme-color" content="#1a2744"/>
+<meta name="theme-color" content="#f4eee4"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="HESAPLA"/>
 <title>HESAPLA</title>
 <link rel="manifest" href="manifest.webmanifest"/>
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-<link rel="stylesheet" href="stylev2.css"/>
+<link rel="icon" type="image/svg+xml" href="icon.svg"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=10"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=10"/>
+<link rel="stylesheet" href="stylev2.css?v=10"/>
 <style>
+html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
   -webkit-user-select:none!important;user-select:none!important;
   -webkit-touch-callout:none!important;
@@ -95,13 +96,17 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 </head>
 <body>
 <div id="app"></div>
-<script src="gamev5.js"></script>
-<script src="v4d.js"></script>
-<script src="v4f.js"></script>
-<script src="rulesv.js"></script>
+<script src="gamev5.js?v=10"></script>
+<script src="v4d.js?v=10"></script>
+<script src="v4f.js?v=10"></script>
+<script src="rulesv.js?v=10"></script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
+  navigator.serviceWorker.getRegistrations().then(function (regs) {
+    return Promise.all(regs.map(function (r) { return r.unregister(); }));
+  }).then(function () {
+    return navigator.serviceWorker.register('./sw-v10.js');
+  });
 }
 </script>
 </body>
