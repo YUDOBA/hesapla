@@ -1,4 +1,4 @@
-const CACHE = 'hesapla-v7';
+const CACHE = 'hesapla-v8';
 const CORE = [
   './index.html',
   './',
@@ -8,7 +8,8 @@ const CORE = [
   'v4f.js',
   'rulesv.js',
   'manifest.webmanifest',
-  'icon.svg'
+  'icon.svg',
+  'yudoba.svg'
 ];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) {
