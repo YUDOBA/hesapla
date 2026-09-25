@@ -36,9 +36,10 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .actions .pas{position:relative;overflow:hidden;}
 .pas .fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform:scaleX(0);transform-origin:left center;background:rgba(26,39,68,.45);pointer-events:none;z-index:0;}
 .pas.holding .fill{transform:scaleX(1);transition:transform 1s linear;}
+.hud{position:relative;}
 .turn-dot{
-  position:absolute;left:50%;transform:translateX(-50%);
-  top:34px;width:calc(min(100vw,420px)/6*0.75);height:calc(min(100vw,420px)/6*0.75);
+  position:absolute;top:6px;left:108px;transform:none;
+  width:calc(min(100vw,420px)/6*0.375);height:calc(min(100vw,420px)/6*0.375);
   border-radius:50%;pointer-events:none;z-index:6;
   background:radial-gradient(circle at 32% 28%,#d8ffb8 0%,#3dcc44 52%,#157a22 100%);
   box-shadow:inset 2px 3px 5px rgba(255,255,255,.6),inset -3px -4px 6px rgba(0,40,0,.35),0 3px 7px rgba(0,30,0,.28);
