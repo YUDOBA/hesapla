@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"/>
+<meta name="theme-color" content="#1a2744"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>HESAPLA</title>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="icon" href="icon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="stylev2.css"/>
+<style>
+.home.splash,.home{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%,rgba(200,60,55,.35),transparent 55%),
+    radial-gradient(ellipse 80% 50% at 50% 110%,rgba(40,90,170,.32),transparent 55%),
+    linear-gradient(#f6efe3,#efe6d6);
+}
+.home h1{color:#15233f;text-shadow:0 1px 0 #fff;}
+.stats.last{border-bottom:2px solid currentColor;padding-bottom:1px;}
+.half.bot .stats.last{color:#1e4f8a;}
+.half.top .stats.last{color:#9b2b2b;}
+.half{overflow:hidden;}
+.half.bot{background:linear-gradient(#a9bbd4,#7e96b4)!important;}
+.half.bot.on{background:linear-gradient(#cfe8ff,#2f8cff)!important;}
+.half.top{background:linear-gradient(#d4a8a5,#b87874)!important;}
+.half.top.on{background:linear-gradient(#ffd2cc,#ff5a4e)!important;}
+.actions .zar{flex:2.4;}
+.actions .pas{flex:.7;position:relative;overflow:hidden;}
+.pas .fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform:scaleX(0);transform-origin:left center;background:rgba(26,39,68,.45);pointer-events:none;z-index:0;}
+.pas.holding .fill{transform:scaleX(1);transition:transform 1s linear;}
+.pas{z-index:1;}
+.pas.holding{outline:2px solid #1a2744;}
+.pes-rail{position:absolute;left:0;top:18%;bottom:26%;width:80px;z-index:9;}
+.pes-line{position:absolute;left:0;top:0;bottom:0;width:12px;background:currentColor;opacity:.7;border-radius:0 4px 4px 0;}
+.half.bot .pes-line{color:#1e4f8a;}
+.half.top .pes-line{color:#9b2b2b;}
+.pes-btn{position:absolute;left:-80px;top:50%;transform:translateY(-50%);width:62px;padding:12px 0;border:0;border-radius:0 10px 10px 0;font:inherit;font-size:13px;letter-spacing:.14em;font-weight:700;background:#222;color:#f7f1e6;transition:left .18s ease;z-index:10;}
+.pes-rail.open .pes-btn{left:12px;}
+.pes-ask{position:absolute;left:16px;right:16px;top:50%;transform:translateY(-50%);background:#fffaf0;border-radius:12px;padding:14px;text-align:center;z-index:20;}
+.pes-ask p{margin:0 0 10px;font-weight:700;}
+.pes-ask button{margin:0 4px;padding:8px 14px;font:inherit;border:0;border-radius:8px;}
+.pes-ok{background:#1a2744;color:#f7f1e6;}
+.pes-no{background:#ddd4c4;}
+.result{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:#f3efe4;}
+.result h1{letter-spacing:.18em;margin:0 0 8px;}
+.result-sub{color:#4a5872;margin:0 0 22px;text-align:center;}
+.result-row{width:min(320px,90%);display:flex;justify-content:space-between;gap:10px;padding:12px 14px;margin:6px 0;background:#f7f1e6;border-radius:10px;box-shadow:0 3px 0 #1a2744;}
+.result .start{margin-top:26px;max-width:320px;width:100%;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="gamev5.js"></script>
+<script src="v4d.js"></script>
+</body>
+</html>
