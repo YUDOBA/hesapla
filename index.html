@@ -1,1 +1,31 @@
-<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"/><meta name="theme-color" content="#1b365d"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="HESAPLA"/><title>HESAPLA</title><link rel="manifest" href="manifest.webmanifest"/><link rel="icon" href="icon.svg" type="image/svg+xml"/><style>html,body{margin:0;height:100%;background:#f3efe4;color:#1b365d;font-family:Georgia,serif}#app{height:100%;height:100dvh;display:flex;align-items:center;justify-content:center;font-size:28px;letter-spacing:.2em}</style></head><body><div id="app">YUKLENIYOR</div><script src="app.js"></script><script>setTimeout(function(){var a=document.getElementById('app');if(a&&a.textContent==='YUKLENIYOR'){a.style.letterSpacing='0';a.style.fontSize='16px';a.style.padding='24px';a.textContent='app.js yuklenemedi. Sayfayi https://yudoba.github.io/hesapla/ adresinden ac.';}},2000);</script></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#1b365d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="HESAPLA" />
+  <meta name="application-name" content="HESAPLA" />
+  <base href="./" />
+  <title>HESAPLA</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">Yükleniyor…</div>
+  <script src="app.js"></script>
+  <script>
+    setTimeout(function () {
+      var a = document.getElementById("app");
+      if (a && a.textContent.indexOf("Yükleniyor") !== -1) {
+        a.innerHTML = "<div class='home'><h1>HESAPLA</h1><p class='install-hint'>Oyun dosyası yüklenemedi. Adresi tam olarak şöyle aç:<br><b>https://yudoba.github.io/hesapla/index.html</b></p></div>";
+      }
+    }, 1500);
+  </script>
+</body>
+</html>
