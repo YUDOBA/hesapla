@@ -10,9 +10,9 @@
 <title>HESAPLA</title>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=14"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=14"/>
-<link rel="stylesheet" href="stylev2.css?v=14"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=15"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=15"/>
+<link rel="stylesheet" href="stylev2.css?v=15"/>
 <style>
 html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -89,6 +89,16 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .pes-ask button{margin:0 4px;padding:8px 14px;font:inherit;border:0;border-radius:8px;}
 .pes-ok{background:#1a2744;color:#f7f1e6;}
 .pes-no{background:#ddd4c4;}
+.score{height:100%;height:100dvh;display:flex;flex-direction:column;position:relative;}
+.score-half{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;}
+.score-half.top{background:linear-gradient(#ffd2cc,#ff5a4e);transform:rotate(180deg);}
+.score-half.bot{background:linear-gradient(#cfe8ff,#2f8cff);}
+.score-card{width:min(320px,88%);background:#fff6e6;border-radius:14px;padding:16px 14px;box-shadow:0 4px 0 #1a2744;text-align:center;}
+.score-card h2{margin:0 0 12px;font-size:18px;letter-spacing:.04em;}
+.score-me,.score-op{display:flex;justify-content:space-between;gap:8px;padding:8px 4px;font-size:14px;}
+.score-me{font-weight:700;border-bottom:1px solid rgba(26,39,68,.15);}
+.score-go{margin-top:12px;width:100%;padding:12px;border:0;border-radius:10px;font:inherit;font-weight:700;background:#1a2744;color:#f7f1e6;}
+.score .ver{position:absolute;left:12px;bottom:8px;font-size:12px;}
 .result{
   height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;
   background:
@@ -96,10 +106,6 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
     radial-gradient(ellipse 90% 46% at 50% 110%,rgba(28,86,190,.48),transparent 56%),
     linear-gradient(#f4e4c8,#ead6b0);
 }
-.result h1{letter-spacing:.18em;margin:0 0 8px;}
-.result-sub{color:#4a5872;margin:0 0 22px;text-align:center;}
-.result-row{width:min(320px,90%);display:flex;justify-content:space-between;gap:10px;padding:12px 14px;margin:6px 0;background:#f7f1e6;border-radius:10px;box-shadow:0 3px 0 #1a2744;}
-.result .start{margin-top:26px;max-width:320px;width:100%;}
 .rules{
   height:100%;height:100dvh;position:relative;overflow:hidden;
   background:
@@ -119,12 +125,13 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 </head>
 <body>
 <div id="app"></div>
-<script src="gamev5.js?v=14"></script>
-<script src="v4d.js?v=14"></script>
-<script src="v4f.js?v=14"></script>
-<script src="rulesv.js?v=14"></script>
-<script src="v11.js?v=14"></script>
-<script src="v12.js?v=14"></script>
+<script src="gamev5.js?v=15"></script>
+<script src="v4d.js?v=15"></script>
+<script src="v4f.js?v=15"></script>
+<script src="rulesv.js?v=15"></script>
+<script src="v11.js?v=15"></script>
+<script src="v12.js?v=15"></script>
+<script src="v15.js?v=15"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
