@@ -2,8 +2,31 @@ var _home12 = home;
 home = function () {
   _home12();
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V13';
+  if (v) v.textContent = 'V14';
 };
+
+function ownedHud(p) {
+  var h = '<div class="jhud slots">';
+  var arr = state.jokers[p] || [];
+  for (var i = 0; i < 2; i++) {
+    if (arr[i] != null) {
+      var on = '';
+      state.chain.forEach(function (c) {
+        if (c && c.t === 'j' && c.i === i && c.p === p) on = ' on';
+      });
+      h += miniDie(arr[i], 'owned' + on + '" data-ji="' + i);
+    } else {
+      h += '<div class="mdie slot"></div>';
+    }
+  }
+  return h + '</div>';
+}
+function pickOverlay(p) {
+  if (!(state.jPick && state.turn === p)) return '';
+  var h = '<div class="jpick-float">';
+  for (var n = 1; n <= 6; n++) h += miniDie(n, 'pickable');
+  return h + '</div>';
+}
 
 var _half12 = halfHtml;
 halfHtml = function (p) {
@@ -11,7 +34,7 @@ halfHtml = function (p) {
   var canJ = state.jokers[p] && state.jokers[p].length && state.turn === p && state.phase === 'choose' && !state.jLocked;
   var jcls = 'jbtn' + (state.jMode && state.turn === p ? ' on' : '') + (canJ ? '' : ' off');
   var lamp = (state.turn === p) ? '<div class="turn-dot holdable"><span class="dfill"></span></div>' : '';
-  var mid = '<div class="midkit">' + lamp + '<button type="button" class="' + jcls + '" data-j="' + p + '">J</button>' + jokerHud(p) + '</div>';
+  var mid = '<div class="midkit">' + lamp + '<button type="button" class="' + jcls + '" data-j="' + p + '">J</button>' + ownedHud(p) + pickOverlay(p) + '</div>';
   if (html.indexOf('class="midkit"') >= 0) return html;
   if (html.indexOf('class="nick"') >= 0) {
     html = html.replace(/(<span class="nick">[\s\S]*?<\/span>)/, '$1' + mid);
@@ -39,7 +62,7 @@ bindTable = function () {
       render();
     };
   });
-  app.querySelectorAll('.midkit .mdie.pickable').forEach(function (el) {
+  app.querySelectorAll('.jpick-float .mdie.pickable, .midkit .mdie.pickable').forEach(function (el) {
     el.onclick = function (e) {
       e.stopPropagation();
       if (state.phase !== 'pickJoker') return;
@@ -97,7 +120,7 @@ if (typeof resultView === 'function') {
   resultView = function () {
     _rv12();
     var v = document.querySelector('.ver');
-    if (v) v.textContent = 'V13';
+    if (v) v.textContent = 'V14';
   };
 }
 
