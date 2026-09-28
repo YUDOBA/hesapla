@@ -2,18 +2,24 @@ var _home12 = home;
 home = function () {
   _home12();
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V12';
+  if (v) v.textContent = 'V13';
 };
 
 var _half12 = halfHtml;
 halfHtml = function (p) {
   var html = _half12(p);
-  if (html.indexOf('class="midkit"') >= 0) return html;
   var canJ = state.jokers[p] && state.jokers[p].length && state.turn === p && state.phase === 'choose' && !state.jLocked;
   var jcls = 'jbtn' + (state.jMode && state.turn === p ? ' on' : '') + (canJ ? '' : ' off');
   var lamp = (state.turn === p) ? '<div class="turn-dot holdable"><span class="dfill"></span></div>' : '';
   var mid = '<div class="midkit">' + lamp + '<button type="button" class="' + jcls + '" data-j="' + p + '">J</button>' + jokerHud(p) + '</div>';
-  return html.replace('</span><span class="stats', '</span>' + mid + '<span class="stats');
+  if (html.indexOf('class="midkit"') >= 0) return html;
+  if (html.indexOf('class="nick"') >= 0) {
+    html = html.replace(/(<span class="nick">[\s\S]*?<\/span>)/, '$1' + mid);
+  }
+  if (html.indexOf('class="midkit"') < 0) {
+    html = html.replace('<div class="hud">', '<div class="hud">' + mid);
+  }
+  return html;
 };
 
 var _bind12 = bindTable;
@@ -91,7 +97,7 @@ if (typeof resultView === 'function') {
   resultView = function () {
     _rv12();
     var v = document.querySelector('.ver');
-    if (v) v.textContent = 'V12';
+    if (v) v.textContent = 'V13';
   };
 }
 
