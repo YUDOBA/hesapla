@@ -10,9 +10,9 @@
 <title>HESAPLA</title>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=11"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=11"/>
-<link rel="stylesheet" href="stylev2.css?v=11"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=12"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=12"/>
+<link rel="stylesheet" href="stylev2.css?v=12"/>
 <style>
 html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -38,28 +38,33 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .half.bot.on{background:linear-gradient(#cfe8ff,#2f8cff)!important;}
 .half.top{background:linear-gradient(#d4a8a5,#b87874)!important;}
 .half.top.on{background:linear-gradient(#ffd2cc,#ff5a4e)!important;}
-.actions .zar,.actions .pas{flex:1;}
-.actions .pas{position:relative;overflow:hidden;}
 .pas{display:none!important;}
 .actions{align-items:center;padding-bottom:calc(10px + env(safe-area-inset-bottom));}
 .half.bot .actions{padding-bottom:calc(18px + env(safe-area-inset-bottom));}
 .actions .zar{flex:2.2;min-height:44px;}
 .clock{min-width:36px;text-align:center;font-size:20px;font-weight:700;}
-.jbtn{width:28px;height:28px;margin-right:6px;border:0;border-radius:8px;font:inherit;font-weight:700;background:#1a2744;color:#f7f1e6;}
+.hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;}
+.hud .nick{justify-self:start;}
+.hud .stats{justify-self:end;}
+.hud>.jhud,.hud>.jbtn{display:none!important;}
+.midkit{display:flex;align-items:center;justify-content:center;gap:6px;justify-self:center;max-width:54vw;}
+.jbtn{width:36px;height:36px;margin:0;border:0;border-radius:9px;font:inherit;font-weight:700;background:#1a2744;color:#f7f1e6;}
 .jbtn.on{background:#c9a227;color:#2a2208;}
 .jbtn.off{opacity:.35;}
-.jhud{display:flex;gap:4px;align-items:center;margin-right:6px;}
-.mdie{width:22px;height:22px;border-radius:4px;background:#fffdf8;border:1px solid #1a2744;display:grid;place-items:center;}
+.jhud{display:flex;gap:4px;align-items:center;}
+.mdie{width:29px;height:29px;border-radius:5px;background:#fffdf8;border:1px solid #1a2744;display:grid;place-items:center;}
 .mdie.pickable,.mdie.owned{cursor:pointer;}
 .mdie.on{background:#f0d36a;}
-.mpips{display:grid;grid-template-columns:repeat(3,4px);grid-template-rows:repeat(3,4px);gap:1px;}
+.mpips{display:grid;grid-template-columns:repeat(3,5px);grid-template-rows:repeat(3,5px);gap:1px;}
 .mpip{background:#1a2744;border-radius:50%;}
-.jpick{display:flex;gap:3px;}
-.hud{position:relative;align-items:center;}
-.turn-dot{
-  position:absolute;top:6px;left:auto;right:8px;transform:none;
-  width:calc(min(100vw,420px)/6*0.375);height:calc(min(100vw,420px)/6*0.375);
-  border-radius:50%;pointer-events:none;z-index:6;
+.jpick{display:flex;gap:3px;flex-wrap:wrap;justify-content:center;}
+.half>.turn-dot{display:none!important;}
+.midkit .turn-dot .dfill{position:absolute;inset:0;border-radius:50%;background:rgba(0,40,0,.28);transform:scaleX(0);transform-origin:left center;pointer-events:none;}
+.midkit .turn-dot.holding .dfill{transform:scaleX(1);transition:transform .5s linear;}
+.midkit .turn-dot{
+  position:relative;top:auto;left:auto;right:auto;transform:none;
+  width:29px;height:29px;flex:0 0 29px;
+  border-radius:50%;pointer-events:auto;z-index:6;
   background:radial-gradient(circle at 32% 28%,#d8ffb8 0%,#3dcc44 52%,#157a22 100%);
   box-shadow:inset 2px 3px 5px rgba(255,255,255,.6),inset -3px -4px 6px rgba(0,40,0,.35),0 3px 7px rgba(0,30,0,.28);
 }
@@ -109,17 +114,18 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 </head>
 <body>
 <div id="app"></div>
-<script src="gamev5.js?v=11"></script>
-<script src="v4d.js?v=11"></script>
-<script src="v4f.js?v=11"></script>
-<script src="rulesv.js?v=11"></script>
-<script src="v11.js?v=11"></script>
+<script src="gamev5.js?v=12"></script>
+<script src="v4d.js?v=12"></script>
+<script src="v4f.js?v=12"></script>
+<script src="rulesv.js?v=12"></script>
+<script src="v11.js?v=12"></script>
+<script src="v12.js?v=12"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
     return Promise.all(regs.map(function (r) { return r.unregister(); }));
   }).then(function () {
-    return navigator.serviceWorker.register('./sw-v11.js');
+    return navigator.serviceWorker.register('./sw-v12.js');
   });
 }
 </script>
