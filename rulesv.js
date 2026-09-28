@@ -32,7 +32,7 @@ home = function () {
   if (h1 && !document.querySelector('.brand')) {
     var img = document.createElement('img');
     img.className = 'brand';
-    img.src = 'icon.svg?v=10';
+    img.src = 'icon.svg?v=11';
     img.alt = 'HESAPLA';
     h1.replaceWith(img);
   }
@@ -40,12 +40,12 @@ home = function () {
   if (y) {
     var yi = document.createElement('img');
     yi.className = 'yudoba-img';
-    yi.src = 'yudoba.svg?v=10';
+    yi.src = 'yudoba.svg?v=11';
     yi.alt = 'YUDOBA';
     y.replaceWith(yi);
   }
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V10';
+  if (v) v.textContent = 'V11';
 };
 pesHtml = function (p) {
   var open = state.pesOpen[p] ? ' open' : '';
@@ -72,20 +72,21 @@ bindPes = function () {
 };
 function rulesView() {
   var items = [
-    ['1. Duzen', 'Iki kisi, ayni telefon, dikey. Ust yari rakibe ters durur.', 'Telefonu yatay cevirmeyin. Ana ekrandan acilinca dikey kilit denenir.'],
-    ['2. Baslangic', 'Iki nick zorunlu. Tur 2-4-6-8-10. Ilk baslayan rastgele.', 'Nick bosse oyun baslamaz. Tur sayisi cift olmalidir.'],
-    ['3. El', 'Sira sende ise ZAR. Bu elde bir gecerli islem veya PAS.', 'Otomatik pas yoktur. Zar gelmeden islem yapilmaz.'],
-    ['4. Islem', 'Zar, sonra + - x bolu, sonra diger zar. Ikinci zar kilitle.', 'Ikinci zardan once ilk zara tekrar basarak iptal. Kilit sonrasi geri alinmaz.'],
-    ['5. Gecerli sonuc', 'Sonuc 1-12 tam sayi ve daire acik olmali. 6-2=4, 6x2=12.', '2-6 gecersiz. 5/2 gecersiz. 0 a bolme yok. 1-12 disi gecersiz.'],
-    ['6. Daire yoksa', 'Matematik dogru olsa da daire soluksa islem olmaz.', 'Bu sayi kalmamis uyarisi gelir. Yeni islem veya PAS.'],
-    ['7. Soluklasma', 'Gecerli islemde daire 2 sn yanip solar.', 'Bu surede islem degismez. Sure bitince sira rakibe gecer.'],
-    ['8. PAS', 'PAS a 1 saniye basili tut. Dolum erken birakilirsa iptal.', 'Tek dokunusla PAS olmaz.'],
-    ['9. Tur bitisi', 'Tura kim basladiysa son el digerinde. Baslamayan 12 bitirdi: tur biter. Baslayan 12 bitirdi: rakibe bir el daha. O da bitirirse beraber.', 'Baslayan 12 bitirdi diye tur hemen kapanmaz.'],
-    ['10. Puan', 'Tur kazanan +1. Beraberlikte iki tarafa +1. Kalan daire toplami cezaya yazilir.', 'Ceza tur icinde dusmez. Beraberlikte de ceza yazilir.'],
-    ['11. Sonraki tur', 'Kaybeden baslar. Beraberlikte onceki tura baslamayan baslar.', 'Yesil top: sira sende. Cizgi: turu sen kapatirsin.'],
-    ['12. Oyun sonu', 'Cok tur alan kazanir. Tur esitse az ceza alan kazanir. Ikisi esitse beraber.', 'Tur dolmadan sonuc yalniz PES ile acilir.'],
-    ['13. PES', '1 ve 7 solundaki cizgiden kaydir. Onay sonrasi sonuc ekrani.', 'PES diyen skoru iyi olsa da kaybeder. Vazgec dersen oyun devam eder.'],
-    ['14. Dokunma', 'Yalniz sirasi gelen kendi ZAR / PAS / zar / islem tuslarini kullanir.', 'Rakip sahaya basmak ise yaramaz.']
+    ['1. Duzen', 'Iki kisi, ayni telefon, dikey. Ust yari rakibe ters durur.', 'Telefonu yatay cevirmeyin.'],
+    ['2. Baslangic', 'Iki nick zorunlu. Tur 2-4-6-8-10. Sure 5-30, varsayilan 10.', 'Nick bosse baslamaz.'],
+    ['3. El', 'Sira sende ise ZAR. Gecerli islem veya sure dolumu eli bitirir.', 'PAS yoktur. Sure 0 olunca sira gecer.'],
+    ['4. Islem', 'Zar, islem, zar. Ikinci zar kilitle. Jokersiz eski kural.', 'Ilk zara tekrar basarak iptal.'],
+    ['5. Gecerli sonuc', 'Sonuc 1-12 tam sayi ve daire acik. Soldan saga: 6-2x3=12.', 'Once carpma yok. 2-6 gecersiz.'],
+    ['6. Daire yoksa', 'Matematik dogru olsa da daire soluksa islem olmaz.', 'Uyari gelir. Sure durmaz.'],
+    ['7. Soluklasma', 'Gecerli islemde daire 2 sn yanip solar.', 'Sure bitince sira rakibe.'],
+    ['8. Sure', 'Zar durunca (joker secimi varsa ondan sonra) N den geri sayar.', 'Joker seciminde de sure akar, 0 ise joker alinmaz ve sira gecer.'],
+    ['9. Tur bitisi', 'Tura kim basladiysa son el digerinde.', 'Baslayan 12 bitirdi: rakibe bir el.'],
+    ['10. Puan', 'Tur kazanan +1. Beraberlikte iki tarafa +1. Kalan toplam ceza.', ''],
+    ['11. Sonraki tur', 'Kaybeden baslar. Beraberlikte onceki tura baslamayan baslar.', 'Yesil top: sira sende.'],
+    ['12. Oyun sonu', 'Cok tur alan kazanir. Tur esitse az ceza alan kazanir.', 'Tur dolmadan sonuc PES ile.'],
+    ['13. PES', '1 ve 7 solundaki cizgiden kaydir.', 'PES diyen kaybeder.'],
+    ['14. Joker', '1x1 veya 6x6 ve yer varsa 1-6 yuz sec. En fazla 2. Bu elde kullanilabilir.', 'Cephane 2 ise yeni joker yok. Bir elde 1 joker.'],
+    ['15. J zinciri', 'J acik: zar islem zar islem zar. Ilk kaynaktan sonra J kilit.', 'J kapaliysa iki zar.']
   ];
   var body = items.map(function (it) {
     return '<article><h3>' + it[0] + '</h3><p>' + it[1] + '</p><p class="warn">' + it[2] + '</p></article>';
@@ -99,6 +100,6 @@ var _resultView = resultView;
 resultView = function () {
   _resultView();
   var v = document.querySelector('.ver');
-  if (v) v.textContent = 'V10';
+  if (v) v.textContent = 'V11';
 };
 if (state.screen === 'home') home();
