@@ -10,9 +10,9 @@
 <title>HESAPLA</title>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=13"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=13"/>
-<link rel="stylesheet" href="stylev2.css?v=13"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=14"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=14"/>
+<link rel="stylesheet" href="stylev2.css?v=14"/>
 <style>
 html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -33,7 +33,7 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .stats.last{border-bottom:2px solid currentColor;padding-bottom:1px;}
 .half.bot .stats.last{color:#1e4f8a;}
 .half.top .stats.last{color:#9b2b2b;}
-.half{overflow:hidden;}
+.half{overflow:visible;}
 .half.bot{background:linear-gradient(#a9bbd4,#7e96b4)!important;}
 .half.bot.on{background:linear-gradient(#cfe8ff,#2f8cff)!important;}
 .half.top{background:linear-gradient(#d4a8a5,#b87874)!important;}
@@ -43,21 +43,26 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .half.bot .actions{padding-bottom:calc(18px + env(safe-area-inset-bottom));}
 .actions .zar{flex:2.2;min-height:44px;}
 .clock{min-width:36px;text-align:center;font-size:20px;font-weight:700;}
-.hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;}
+.hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;min-height:44px;}
 .hud .nick{justify-self:start;}
 .hud .stats{justify-self:end;}
 .hud>.jhud,.hud>.jbtn{display:none!important;}
-.midkit{display:flex;align-items:center;justify-content:center;gap:6px;justify-self:center;max-width:54vw;z-index:7;}
+.midkit{display:flex;align-items:center;justify-content:center;gap:6px;justify-self:center;position:relative;z-index:8;}
 .jbtn{width:36px;height:36px;margin:0;border:0;border-radius:9px;font:inherit;font-weight:700;background:#1a2744;color:#f7f1e6;}
 .jbtn.on{background:#c9a227;color:#2a2208;}
 .jbtn.off{opacity:.35;}
-.jhud{display:flex;gap:4px;align-items:center;}
-.mdie{width:29px;height:29px;border-radius:5px;background:#fffdf8;border:1px solid #1a2744;display:grid;place-items:center;}
+.jhud.slots{display:flex;gap:4px;align-items:center;min-width:62px;min-height:29px;}
+.mdie{width:29px;height:29px;border-radius:5px;background:#fffdf8;border:1px solid #1a2744;display:grid;place-items:center;flex:0 0 29px;}
+.mdie.slot{visibility:hidden;pointer-events:none;border-color:transparent;background:transparent;}
 .mdie.pickable,.mdie.owned{cursor:pointer;}
 .mdie.on{background:#f0d36a;}
 .mpips{display:grid;grid-template-columns:repeat(3,5px);grid-template-rows:repeat(3,5px);gap:1px;}
 .mpip{background:#1a2744;border-radius:50%;}
-.jpick{display:flex;gap:3px;flex-wrap:wrap;justify-content:center;}
+.jpick-float{
+  position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);
+  display:flex;gap:4px;z-index:20;padding:5px 7px;border-radius:8px;
+  background:rgba(247,241,230,.94);box-shadow:0 3px 10px rgba(0,0,0,.22);
+}
 .half>.turn-dot{display:none!important;}
 .midkit .turn-dot .dfill{position:absolute;inset:0;border-radius:50%;background:rgba(0,40,0,.28);transform:scaleX(0);transform-origin:left center;pointer-events:none;}
 .midkit .turn-dot.holding .dfill{transform:scaleX(1);transition:transform .5s linear;}
@@ -114,12 +119,12 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 </head>
 <body>
 <div id="app"></div>
-<script src="gamev5.js?v=13"></script>
-<script src="v4d.js?v=13"></script>
-<script src="v4f.js?v=13"></script>
-<script src="rulesv.js?v=13"></script>
-<script src="v11.js?v=13"></script>
-<script src="v12.js?v=13"></script>
+<script src="gamev5.js?v=14"></script>
+<script src="v4d.js?v=14"></script>
+<script src="v4f.js?v=14"></script>
+<script src="rulesv.js?v=14"></script>
+<script src="v11.js?v=14"></script>
+<script src="v12.js?v=14"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
