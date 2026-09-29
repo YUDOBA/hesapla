@@ -2,34 +2,33 @@ function chromeVer() {
   var v = document.querySelector('.ver');
   if (v) v.textContent = 'V20';
 }
+function wrapBlk(lab, ctrl) {
+  if (!lab || !ctrl || ctrl.closest('.blk')) return;
+  var d = document.createElement('div');
+  d.className = 'blk';
+  lab.parentNode.insertBefore(d, lab);
+  d.appendChild(lab);
+  d.appendChild(ctrl);
+}
 var _lay20 = layoutHome;
 layoutHome = function () {
   _lay20();
   var box = document.querySelector('.home');
-  if (!box) return;
-  box.querySelectorAll('label').forEach(function (lab) {
-    lab.style.alignSelf = 'center';
-    lab.style.textAlign = 'left';
-    lab.style.width = 'min(320px, calc(100% - 44px))';
-    lab.style.maxWidth = '320px';
-  });
-  box.querySelectorAll('input, select').forEach(function (el) {
-    el.style.alignSelf = 'center';
-    el.style.width = 'min(320px, calc(100% - 44px))';
-    el.style.maxWidth = '320px';
-    el.style.minHeight = '48px';
-    el.style.fontSize = '20px';
-    el.style.boxSizing = 'border-box';
-  });
+  if (!box) { chromeVer(); return; }
+  var n0 = document.getElementById('n0');
+  var n1 = document.getElementById('n1');
+  var on = document.getElementById('onick');
+  if (n0 && n0.previousElementSibling && n0.previousElementSibling.tagName === 'LABEL') wrapBlk(n0.previousElementSibling, n0);
+  if (n1 && n1.previousElementSibling && n1.previousElementSibling.tagName === 'LABEL') wrapBlk(n1.previousElementSibling, n1);
+  if (on && on.previousElementSibling && on.previousElementSibling.tagName === 'LABEL') wrapBlk(on.previousElementSibling, on);
   var pair = box.querySelector('.pair');
   if (pair) {
-    pair.style.width = 'min(320px, calc(100% - 44px))';
-    pair.style.maxWidth = '320px';
-    pair.style.alignSelf = 'center';
+    pair.classList.add('blk');
     pair.querySelectorAll('select').forEach(function (el) {
       el.style.width = '100%';
       el.style.maxWidth = 'none';
-      el.style.minHeight = '48px';
+      el.style.minHeight = '52px';
+      el.style.fontSize = '20px';
     });
   }
   chromeVer();
