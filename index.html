@@ -10,9 +10,9 @@
 <title>HESAPLA</title>
 <link rel="manifest" href="manifest.webmanifest"/>
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=16"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=16"/>
-<link rel="stylesheet" href="stylev2.css?v=16"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=17"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=17"/>
+<link rel="stylesheet" href="stylev2.css?v=17"/>
 <style>
 html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -25,11 +25,14 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
     radial-gradient(ellipse 90% 48% at 50% -8%,rgba(214,64,56,.55),transparent 58%),
     radial-gradient(ellipse 90% 48% at 50% 108%,rgba(28,86,190,.5),transparent 58%),
     linear-gradient(#f4e4c8,#ead6b0);
+  padding-bottom:calc(92px + env(safe-area-inset-bottom));
+  box-sizing:border-box;
 }
-.home .brand{width:168px;height:168px;display:block;margin:4px auto 10px;border-radius:32px;box-shadow:0 6px 0 #1a2744,0 10px 16px rgba(0,0,0,.18);}
-.home .yudoba-img{position:absolute;right:14px;bottom:calc(10px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:10px;}
+.home .brand{width:140px;height:140px;display:block;margin:4px auto 8px;border-radius:28px;box-shadow:0 6px 0 #1a2744,0 10px 16px rgba(0,0,0,.18);}
+.home .yudoba-img{position:absolute;right:14px;bottom:calc(10px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:10px;z-index:2;pointer-events:none;}
 .home .yudoba{display:none;}
-.rules-home{margin-top:12px;max-width:320px;width:100%;padding:12px;font:inherit;letter-spacing:.14em;border:0;border-radius:10px;background:#c44a4a;color:#fffaf0;}
+.home .ver{left:12px;bottom:calc(12px + env(safe-area-inset-bottom));}
+.rules-home{margin:10px auto 0;max-width:260px;width:calc(100% - 88px);margin-right:72px;padding:12px;font:inherit;letter-spacing:.14em;border:0;border-radius:10px;background:#c44a4a;color:#fffaf0;}
 .netrow{display:flex;gap:8px;max-width:320px;width:100%;margin:10px 0 8px;}
 .netbtn{flex:1;padding:10px 6px;border:0;border-radius:10px;font:inherit;font-size:13px;font-weight:700;background:#1a2744;color:#f7f1e6;}
 .roomcode{font-size:42px;letter-spacing:.2em;font-weight:700;margin:8px 0;}
@@ -98,6 +101,7 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .score-me,.score-op{display:flex;justify-content:space-between;gap:8px;padding:8px 4px;font-size:14px;}
 .score-me{font-weight:700;border-bottom:1px solid rgba(26,39,68,.15);}
 .score-go{margin-top:12px;width:100%;padding:12px;border:0;border-radius:10px;font:inherit;font-weight:700;background:#1a2744;color:#f7f1e6;}
+.score-leave{margin-top:8px;width:100%;padding:10px;border:0;border-radius:10px;font:inherit;background:#8a2b2b;color:#fffaf0;}
 .score .ver{position:absolute;left:12px;bottom:8px;font-size:12px;}
 .rules{
   height:100%;height:100dvh;position:relative;overflow:hidden;
@@ -119,14 +123,15 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 <body>
 <div id="app"></div>
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-<script src="gamev5.js?v=16"></script>
-<script src="v4d.js?v=16"></script>
-<script src="v4f.js?v=16"></script>
-<script src="rulesv.js?v=16"></script>
-<script src="v11.js?v=16"></script>
-<script src="v12.js?v=16"></script>
-<script src="v15.js?v=16"></script>
-<script src="online.js?v=16"></script>
+<script src="gamev5.js?v=17"></script>
+<script src="v4d.js?v=17"></script>
+<script src="v4f.js?v=17"></script>
+<script src="rulesv.js?v=17"></script>
+<script src="v11.js?v=17"></script>
+<script src="v12.js?v=17"></script>
+<script src="v15.js?v=17"></script>
+<script src="online.js?v=17"></script>
+<script src="v17.js?v=17"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
