@@ -13,7 +13,7 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-<link rel="stylesheet" href="stylev2.css?v=19"/>
+<link rel="stylesheet" href="stylev2.css?v=20"/>
 <style>
 html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -33,9 +33,13 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .home.gate .brand{width:168px;height:168px;margin:24px auto 28px;}
 .home.stack{display:flex;flex-direction:column;align-items:center;}
 .home.stack input,.home.stack select,.home.stack label,.home.stack .netrow,.home.stack .pair{
-  width:min(300px,calc(100% - 112px));
+  width:min(320px,calc(100% - 48px));
+  max-width:320px;
+  align-self:center;
+  box-sizing:border-box;
 }
-.home.stack label{text-align:left;margin:8px 0 4px;}
+.home.stack label{text-align:left;margin:8px 0 4px;align-self:center;}
+.home.stack input,.home.stack select{min-height:48px;font-size:20px;}
 .gatebtn,.home.stack .start,.home.stack .rules-home,.home.stack .netbtn{
   display:block;width:min(300px,calc(100% - 112px));margin:8px auto;padding:14px;
   min-height:48px;box-sizing:border-box;
@@ -43,11 +47,11 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
   background:#1a2744;color:#f7f1e6;text-transform:uppercase;
 }
 .home.stack .rules-home{background:#c44a4a;color:#fffaf0;margin-right:auto;margin-left:auto;}
-.home.stack .netrow{display:flex;gap:8px;margin:8px auto;}
+.home.stack .netrow{display:flex;gap:8px;margin:8px auto;width:min(320px,calc(100% - 48px));}
 .home.stack .netrow .netbtn{width:auto;flex:1;margin:0;min-height:48px;}
 .pair{display:flex;gap:8px;margin:4px auto 8px;}
-.pair>div{flex:1;min-width:0;}
-.pair select{width:100%;max-width:none;}
+.pair>div{flex:1;min-width:0;display:flex;flex-direction:column;}
+.pair select{width:100%!important;max-width:none!important;min-height:48px;}
 .home .yudoba-img{position:absolute;right:14px;bottom:calc(10px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:10px;z-index:2;pointer-events:none;}
 .home .yudoba{display:none;}
 .home .ver{position:absolute;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));}
@@ -135,23 +139,24 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 <body>
 <div id="app"></div>
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-<script src="gamev5.js?v=19"></script>
-<script src="v4d.js?v=19"></script>
-<script src="v4f.js?v=19"></script>
-<script src="rulesv.js?v=19"></script>
-<script src="v11.js?v=19"></script>
-<script src="v12.js?v=19"></script>
-<script src="v15.js?v=19"></script>
-<script src="online.js?v=19"></script>
-<script src="v17.js?v=19"></script>
-<script src="v18.js?v=19"></script>
-<script src="v19.js?v=19"></script>
+<script src="gamev5.js?v=20"></script>
+<script src="v4d.js?v=20"></script>
+<script src="v4f.js?v=20"></script>
+<script src="rulesv.js?v=20"></script>
+<script src="v11.js?v=20"></script>
+<script src="v12.js?v=20"></script>
+<script src="v15.js?v=20"></script>
+<script src="online.js?v=20"></script>
+<script src="v17.js?v=20"></script>
+<script src="v18.js?v=20"></script>
+<script src="v19.js?v=20"></script>
+<script src="v20.js?v=20"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
     return Promise.all(regs.map(function (r) { return r.unregister(); }));
   }).then(function () {
-    return navigator.serviceWorker.register('./sw-v19.js');
+    return navigator.serviceWorker.register('./sw-v20.js');
   });
 }
 </script>
