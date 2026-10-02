@@ -13,7 +13,7 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-<link rel="stylesheet" href="stylev2.css?v=20"/>
+<link rel="stylesheet" href="stylev2.css?v=21"/>
 <style>
 html,body,#app{background:#f4eee4;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num{
@@ -139,24 +139,25 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 <body>
 <div id="app"></div>
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-<script src="gamev5.js?v=20"></script>
-<script src="v4d.js?v=20"></script>
-<script src="v4f.js?v=20"></script>
-<script src="rulesv.js?v=20"></script>
-<script src="v11.js?v=20"></script>
-<script src="v12.js?v=20"></script>
-<script src="v15.js?v=20"></script>
-<script src="online.js?v=20"></script>
-<script src="v17.js?v=20"></script>
-<script src="v18.js?v=20"></script>
-<script src="v19.js?v=20"></script>
-<script src="v20.js?v=20"></script>
+<script src="gamev5.js?v=21"></script>
+<script src="v4d.js?v=21"></script>
+<script src="v4f.js?v=21"></script>
+<script src="rulesv.js?v=21"></script>
+<script src="v11.js?v=21"></script>
+<script src="v12.js?v=21"></script>
+<script src="v15.js?v=21"></script>
+<script src="online.js?v=21"></script>
+<script src="v17.js?v=21"></script>
+<script src="v18.js?v=21"></script>
+<script src="v19.js?v=21"></script>
+<script src="v20.js?v=21"></script>
+<script src="v21.js?v=21"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
     return Promise.all(regs.map(function (r) { return r.unregister(); }));
   }).then(function () {
-    return navigator.serviceWorker.register('./sw-v20.js');
+    return navigator.serviceWorker.register('./sw-v21.js');
   });
 }
 </script>
