@@ -13,7 +13,7 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg"/>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-<link rel="stylesheet" href="stylev2.css?v=23"/>
+<link rel="stylesheet" href="stylev2.css?v=24"/>
 <style>
 html,body,#app{background:#f4eee4;touch-action:manipulation;}
 html,body,#app,.table,.half,.home,.result,.btn,.pas,.zar,.nick,.stats,.num,.tok,.tape{
@@ -64,6 +64,7 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .half.bot .stats.last{color:#1e4f8a;}
 .half.top .stats.last{color:#9b2b2b;}
 .half{overflow:visible;position:relative;}
+.half .grid{margin-top:30px;}
 .half.bot{background:linear-gradient(#a9bbd4,#7e96b4)!important;}
 .half.bot.on{background:linear-gradient(#cfe8ff,#2f8cff)!important;}
 .half.top{background:linear-gradient(#d4a8a5,#b87874)!important;}
@@ -134,7 +135,7 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 .rules-scroll h3{margin:0 0 6px;font-size:14px;}
 .rules-scroll p{margin:0 0 6px;font-size:13px;line-height:1.35;}
 .rules-scroll .warn{color:#9b2b2b;font-size:12px;}
-.tape{position:absolute;left:6px;right:6px;top:40px;z-index:14;pointer-events:none;display:flex;gap:3px;justify-content:center;align-items:center;flex-wrap:nowrap;height:26px;margin:0;}
+.tape{position:absolute;left:6px;right:6px;top:50px;z-index:14;pointer-events:none;display:flex;gap:3px;justify-content:center;align-items:center;flex-wrap:nowrap;height:26px;margin:0;}
 .tok{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-weight:700;font-size:11px;background:#1a2744;color:#f7f1e6;}
 .tok.eq{background:transparent;color:#1a2744;width:12px;}
 </style>
@@ -142,27 +143,28 @@ input,textarea,select{-webkit-user-select:text!important;user-select:text!import
 <body>
 <div id="app"></div>
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
-<script src="gamev5.js?v=23"></script>
-<script src="v4d.js?v=23"></script>
-<script src="v4f.js?v=23"></script>
-<script src="rulesv.js?v=23"></script>
-<script src="v11.js?v=23"></script>
-<script src="v12.js?v=23"></script>
-<script src="v15.js?v=23"></script>
-<script src="online.js?v=23"></script>
-<script src="v17.js?v=23"></script>
-<script src="v18.js?v=23"></script>
-<script src="v19.js?v=23"></script>
-<script src="v20.js?v=23"></script>
-<script src="v21.js?v=23"></script>
-<script src="v22.js?v=23"></script>
-<script src="v23.js?v=23"></script>
+<script src="gamev5.js?v=24"></script>
+<script src="v4d.js?v=24"></script>
+<script src="v4f.js?v=24"></script>
+<script src="rulesv.js?v=24"></script>
+<script src="v11.js?v=24"></script>
+<script src="v12.js?v=24"></script>
+<script src="v15.js?v=24"></script>
+<script src="online.js?v=24"></script>
+<script src="v17.js?v=24"></script>
+<script src="v18.js?v=24"></script>
+<script src="v19.js?v=24"></script>
+<script src="v20.js?v=24"></script>
+<script src="v21.js?v=24"></script>
+<script src="v22.js?v=24"></script>
+<script src="v23.js?v=24"></script>
+<script src="v24.js?v=24"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function (regs) {
     return Promise.all(regs.map(function (r) { return r.unregister(); }));
   }).then(function () {
-    return navigator.serviceWorker.register('./sw-v23.js');
+    return navigator.serviceWorker.register('./sw-v24.js');
   });
 }
 </script>
